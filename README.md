@@ -1,4 +1,4 @@
-# authorization-manager
+# Authorization manager
 
 Authorization management library.
 
@@ -36,6 +36,3 @@ Authorization management has become a *commodity*.
 - Withdraw a set of permissions from a role.
 - Respond whether a permission is assigned to a role.
 - Respond whether a user has a permission.
-
-## TODO
-- val permissions: Set<Permission> -> val permissions: Permissions
