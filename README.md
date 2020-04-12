@@ -26,13 +26,12 @@ Authorization management has become a *commodity*.
 
 ## Features
 
-- Update role description.
-- Appoint user as [role].
-- Withdraw user from [role].
 - Update permission description.
 - Assign a permission to a role.
 - Assign a set of permissions to a role.
 - Withdraw a permission from a role.
 - Withdraw a set of permissions from a role.
 - Respond whether a permission is assigned to a role.
-- Respond whether a user has a permission.
+- Appoint user as [role].
+- Withdraw user from [role].
+- Respond whether a permission is assigned to a user.
