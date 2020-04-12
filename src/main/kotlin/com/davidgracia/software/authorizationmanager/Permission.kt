@@ -1,4 +1,4 @@
-package authorization.manager
+package com.davidgracia.software.authorizationmanager
 
 import java.util.*
 
