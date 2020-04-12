@@ -12,22 +12,10 @@ java {
 //SOURCES -- END
 
 //JAVADOC -- BEGIN
-/*tasks.javadoc {
-    isFailOnError = false
-}*/
-
 java {
     withJavadocJar()
 }
 //JAVADOC -- END
-
-/*tasks.withType<AbstractArchiveTask> {
-    setProperty("archiveBaseName", "booking-service")
-    setProperty("archiveAppendix", "secondary-adapter-goto")
-    setProperty("archiveVersion", "1.0.0")
-    setProperty("archiveClassifier", "")
-    setProperty("archiveExtension", "jar")
-}*/
 
 val mavenPublicationName: String = "maven"
 
@@ -42,7 +30,7 @@ publishing {
             pom {
                 name.set("Authorization manager")
                 description.set("A concise description of my library")
-                url.set("http://www.example.com/library")
+                url.set("https://github.com/Soft-Rock/authorization-manager")
                 licenses {
                     license {
                         name.set("GNU General Public License v3.0")
@@ -57,8 +45,8 @@ publishing {
                     }
                 }
                 scm {
-//                    connection.set("scm:git:git://example.com/my-library.git")
-//                    developerConnection.set("scm:git:ssh://example.com/my-library.git")
+                    connection.set("scm:git:git://github.com/Soft-Rock/authorization-manager.git")
+                    developerConnection.set("scm:git:ssh://github.com/Soft-Rock/authorization-manager.git")
                     url.set("https://github.com/Soft-Rock/authorization-manager")
                 }
             }
@@ -66,26 +54,20 @@ publishing {
     }
 }
 
-
-fun findProperty(s: String) = project.findProperty(s) as String?
 bintray {
-    user = findProperty("bintray.user")
-    key = findProperty("bintray.key")
+    user = System.getProperty("bintray.user")
+    key = System.getProperty("bintray.key")
     setPublications(mavenPublicationName)
-//        publish = true
-    pkg(delegateClosureOf<com.jfrog.bintray.gradle.BintrayExtension.PackageConfig> {
-        repo = "authorization-manager"
+    publish = true
+    pkg.apply {
+        repo = "maven"
         name = "authorization-manager"
         userOrg = "dgraciac"
-
-        setLicenses("GNU General Public License v3.0")
         vcsUrl = "https://github.com/Soft-Rock/authorization-manager"
-/*        version {
-            name = "1.0.0"
-            desc = "1.0.0"
-            released = java.util.Date()
-        }*/
-    })
+        version.apply {
+            name = "0.0.1"
+        }
+    }
 }
 
 repositories {
