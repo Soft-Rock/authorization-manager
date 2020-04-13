@@ -19,5 +19,6 @@ jobs:
       run: chmod +x gradlew
     - name: Upload to Bintray
       run: |
-        echo "Release version: ${GITHUB_REF}"
-        ./gradlew -Pversion=${GITHUB_REF} bintrayUpload -Dbintray.user=${{ secrets.BINTRAY_USER }} -Dbintray.key=${{ secrets.BINTRAY_API_KEY }}
+        RELEASE_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3)
+        echo "Release version: ${RELEASE_VERSION}"
+        ./gradlew -Pversion=${RELEASE_VERSION} bintrayUpload -Dbintray.user=${{ secrets.BINTRAY_USER }} -Dbintray.key=${{ secrets.BINTRAY_API_KEY }}
