@@ -7,6 +7,7 @@ plugins {
 
 allprojects {
     apply(plugin = "kotlin")
+    java.sourceCompatibility = JavaVersion.VERSION_1_8
 }
 //PLUGINS -- END
 

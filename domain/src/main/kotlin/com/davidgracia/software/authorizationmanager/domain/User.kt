@@ -1,8 +1,6 @@
 package com.davidgracia.software.authorizationmanager.domain
 
-import java.util.*
-
-data class User(val identifier: UUID, val roles: Set<Role>) {
+data class User(val roles: Set<Role>) {
     fun appointAs(role: Role): User {
         return copy(roles = roles.plusElement(role))
     }
