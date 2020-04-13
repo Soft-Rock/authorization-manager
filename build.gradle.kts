@@ -62,7 +62,7 @@ bintray {
     pkg.apply {
         repo = "maven"
         name = "authorization-manager"
-        userOrg = "dgraciac"
+        userOrg = "soft-rock"
         vcsUrl = "https://github.com/Soft-Rock/authorization-manager"
         version.apply {
             name = "0.0.1"
