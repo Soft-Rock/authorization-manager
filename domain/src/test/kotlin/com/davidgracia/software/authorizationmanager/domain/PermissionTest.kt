@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager
+package com.davidgracia.software.authorizationmanager.domain
 
 import java.util.*
 import kotlin.test.Test
