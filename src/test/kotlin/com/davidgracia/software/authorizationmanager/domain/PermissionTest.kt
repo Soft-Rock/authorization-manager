@@ -1,5 +1,6 @@
-package com.davidgracia.software.authorizationmanager
+package com.davidgracia.software.authorizationmanager.domain
 
+import com.davidgracia.software.authorizationmanager.domain.Permission
 import java.util.*
 import kotlin.test.Test
 import kotlin.test.assertNotNull
