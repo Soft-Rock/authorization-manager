@@ -24,7 +24,7 @@ publishing {
         create<MavenPublication>(mavenPublicationName) {
             groupId = "com.davidgracia.software"
             artifactId = "authorization-manager"
-            version = "0.0.1"
+            version = project.version.toString()
 
             from(components["java"])
             pom {
@@ -65,7 +65,7 @@ bintray {
         userOrg = "soft-rock"
         vcsUrl = "https://github.com/Soft-Rock/authorization-manager"
         version.apply {
-            name = "0.0.1"
+            name = project.version.toString()
         }
     }
 }
