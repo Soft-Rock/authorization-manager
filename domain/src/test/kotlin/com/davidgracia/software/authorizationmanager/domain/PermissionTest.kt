@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.domain
+package com.davidgracia.software.authorizationmanager.interaction
 
 import com.davidgracia.software.authorizationmanager.domain.Permission
 import java.util.*
