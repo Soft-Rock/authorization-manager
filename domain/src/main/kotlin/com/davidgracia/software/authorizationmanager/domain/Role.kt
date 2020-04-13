@@ -1,8 +1,6 @@
 package com.davidgracia.software.authorizationmanager.domain
 
-import java.util.*
-
-data class Role(val identifier: UUID, val permissions: Set<Permission>) {
+data class Role(val permissions: Set<Permission>) {
     fun assignPermission(permission: Permission): Role {
         return copy(permissions = this.permissions.plusElement(permission))
     }
