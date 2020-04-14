@@ -1,6 +1,6 @@
 //PLUGINS -- BEGIN
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.3.71"
+    kotlin("jvm") version "1.3.72"
     id("com.jfrog.bintray") version "1.8.5"
     `maven-publish`
 }
@@ -30,10 +30,10 @@ allprojects {
     }
 
     dependencies {
-        "implementation"(platform("org.jetbrains.kotlin:kotlin-bom"))
-        "implementation"("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-        "testImplementation"("org.jetbrains.kotlin:kotlin-test")
-        "testImplementation"("org.jetbrains.kotlin:kotlin-test-junit")
+        "implementation"(platform(kotlin("bom")))
+        "implementation"(kotlin("stdlib-jdk8"))
+        "testImplementation"(kotlin("test"))
+        "testImplementation"(kotlin("test-junit"))
     }
 }
 //Dependencies -- END
@@ -52,7 +52,7 @@ publishing {
             pom {
                 name.set("Authorization manager")
                 description.set("A concise description of my library")
-                url.set("https://github.com/Soft-Rock/authorization-manager")
+                url.set("https://github.com/beforeigners/authorization-manager")
                 licenses {
                     license {
                         name.set("The MIT License")
@@ -67,9 +67,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection.set("scm:git:git://github.com/Soft-Rock/authorization-manager.git")
-                    developerConnection.set("scm:git:ssh://github.com/Soft-Rock/authorization-manager.git")
-                    url.set("https://github.com/Soft-Rock/authorization-manager")
+                    connection.set("scm:git:git://github.com/beforeigners/authorization-manager.git")
+                    developerConnection.set("scm:git:ssh://github.com/beforeigners/authorization-manager.git")
+                    url.set("https://github.com/beforeigners/authorization-manager")
                 }
             }
         }
@@ -84,8 +84,8 @@ bintray {
     pkg.apply {
         repo = "maven"
         name = "authorization-manager"
-        userOrg = "soft-rock"
-        vcsUrl = "https://github.com/Soft-Rock/authorization-manager"
+        userOrg = "beforeigners"
+        vcsUrl = "https://github.com/beforeigners/authorization-manager"
         version.apply {
             name = project.version.toString()
         }
