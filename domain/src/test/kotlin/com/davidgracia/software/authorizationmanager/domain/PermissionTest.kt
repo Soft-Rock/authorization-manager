@@ -1,11 +1,12 @@
 package com.davidgracia.software.authorizationmanager.domain
 
-import kotlin.test.Test
-import kotlin.test.assertNotNull
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.Test
 
 class PermissionTest {
-    @Test fun testSomeLibraryMethod() {
+    @Test
+    fun testSomeLibraryMethod() {
         val permission = Permission("description")
-        assertNotNull(permission)
+        assertThat(permission).isNotNull
     }
 }

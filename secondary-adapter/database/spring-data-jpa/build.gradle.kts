@@ -13,4 +13,5 @@ tasks.bootJar {
 dependencies {
     implementation(project(":interaction"))
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    runtimeOnly("com.h2database:h2:1.4.200")
 }

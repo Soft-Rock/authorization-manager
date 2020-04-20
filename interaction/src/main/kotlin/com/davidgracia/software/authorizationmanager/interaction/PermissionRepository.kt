@@ -1,7 +1,7 @@
 package com.davidgracia.software.authorizationmanager.interaction
 
 import com.davidgracia.software.authorizationmanager.domain.Permission
-import java.util.*
+import java.util.UUID
 
 interface PermissionRepository {
     fun get(permissionIdentifier: UUID): Permission

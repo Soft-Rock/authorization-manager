@@ -1,7 +1,7 @@
 package com.davidgracia.software.authorizationmanager.interaction
 
 import com.davidgracia.software.authorizationmanager.domain.Permission
-import java.util.*
+import java.util.UUID
 import javax.inject.Named
 import javax.transaction.Transactional
 
