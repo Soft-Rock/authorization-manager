@@ -7,7 +7,6 @@ plugins {
     kotlin("plugin.spring") version "1.3.71"
 }
 
-
 dependencies {
     implementation("org.springframework.boot:spring-boot-autoconfigure:2.2.6.RELEASE")
     implementation("org.jetbrains.kotlin:kotlin-reflect")

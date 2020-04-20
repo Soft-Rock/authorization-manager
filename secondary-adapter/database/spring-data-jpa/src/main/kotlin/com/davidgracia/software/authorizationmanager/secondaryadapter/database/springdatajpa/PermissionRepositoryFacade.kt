@@ -2,8 +2,8 @@ package com.davidgracia.software.authorizationmanager.secondaryadapter.database.
 
 import com.davidgracia.software.authorizationmanager.domain.Permission
 import com.davidgracia.software.authorizationmanager.interaction.PermissionRepository
+import java.util.UUID
 import org.springframework.stereotype.Component
-import java.util.*
 
 @Component
 class PermissionRepositoryFacade : PermissionRepository {
