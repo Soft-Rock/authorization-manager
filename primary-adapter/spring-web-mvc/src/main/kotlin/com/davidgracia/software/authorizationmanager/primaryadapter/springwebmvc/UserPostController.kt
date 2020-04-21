@@ -12,12 +12,9 @@ class UserPostController {
 
     @PostMapping("/users")
     @ResponseStatus(HttpStatus.CREATED)
-    fun postUser
-            (@RequestBody userRequestPostBody: UserRequestPostBody): UserResponsePostBody {
+    fun postUser(@RequestBody userRequestPostBody: UserRequestPostBody): UserResponsePostBody {
         return UserResponsePostBody(identifier = UUID.randomUUID().toString(), name = userRequestPostBody.name)
     }
-
-    // asdsa
 }
 
 data class UserRequestPostBody(val name: String)
