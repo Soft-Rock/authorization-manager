@@ -1,6 +1,8 @@
 // PLUGINS -- BEGIN
 plugins {
     kotlin("jvm") version "1.3.72"
+    jacoco
+    id("org.sonarqube") version "2.8"
     id("com.jfrog.bintray") version "1.8.5"
     `maven-publish`
     id("com.diffplug.gradle.spotless") version "3.28.1"
@@ -12,7 +14,7 @@ allprojects {
 }
 // PLUGINS -- END
 
-// spotless configuration -- BEGIN
+// SPOTLESS -- BEGIN
 allprojects {
     apply(plugin = "com.diffplug.gradle.spotless")
 
@@ -33,7 +35,7 @@ allprojects {
         dependsOn(tasks.spotlessCheck)
     }
 }
-// spotless configuration -- END
+// SPOTLESS -- END
 
 // SOURCES -- BEGIN
 java {
@@ -46,6 +48,39 @@ java {
     withJavadocJar()
 }
 // JAVADOC -- END
+
+// JACOCO -- BEGIN
+allprojects {
+    apply(plugin = "jacoco")
+
+    jacoco {
+        toolVersion = "0.8.5"
+    }
+
+    tasks.jacocoTestReport {
+        reports {
+            xml.isEnabled = true
+            html.isEnabled = true
+        }
+
+        dependsOn(tasks.test)
+    }
+
+    tasks.build {
+        dependsOn(tasks.jacocoTestReport)
+    }
+}
+// JACOCO -- END
+
+// SonarQube -- BEGIN
+sonarqube {
+    properties {
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.organization", "beforeigners")
+        property("sonar.projectKey", "beforeigners_authorization-manager")
+    }
+}
+// SonarQube -- END
 
 // TEST LOGGING -- BEGIN
 allprojects {
