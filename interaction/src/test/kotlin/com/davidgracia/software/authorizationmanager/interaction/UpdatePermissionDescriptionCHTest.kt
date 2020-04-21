@@ -3,8 +3,8 @@ package com.davidgracia.software.authorizationmanager.interaction
 import com.davidgracia.software.authorizationmanager.domain.Permission
 import io.mockk.every
 import io.mockk.mockk
-import org.junit.jupiter.api.Test
 import java.util.UUID
+import org.junit.jupiter.api.Test
 
 internal class UpdatePermissionDescriptionCHTest {
     @Test
@@ -20,5 +20,4 @@ internal class UpdatePermissionDescriptionCHTest {
         UpdatePermissionDescriptionCH(permissionRepository = permissionRepository)
                 .handle(permissionIdentifier = permissionIdentifier, description = description)
     }
-
 }
