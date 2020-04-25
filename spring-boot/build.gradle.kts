@@ -15,7 +15,7 @@ dependencies {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
     }*/
 
-    implementation(project(":primary-adapter:spring-web-mvc"))
+    implementation(project(":primary-adapter:rest:spring-web-mvc"))
     implementation(project(":secondary-adapter:database:spring-data-jpa"))
 }
 
