@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.primaryadapter.springwebmvc
+package com.davidgracia.software.authorizationmanager.primaryadapter.rest.springwebmvc
 
 import com.davidgracia.software.authorizationmanager.interaction.UpdatePermissionDescriptionCH
 import java.util.UUID

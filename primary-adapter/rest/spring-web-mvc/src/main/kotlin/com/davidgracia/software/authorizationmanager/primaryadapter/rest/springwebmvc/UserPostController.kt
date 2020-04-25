@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.primaryadapter.springwebmvc
+package com.davidgracia.software.authorizationmanager.primaryadapter.rest.springwebmvc
 
 import java.util.UUID
 import org.springframework.http.HttpStatus

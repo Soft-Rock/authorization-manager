@@ -1,4 +1,4 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm")
+    kotlin("jvm")
     `java-library`
 }
