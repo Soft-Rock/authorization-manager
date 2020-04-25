@@ -5,7 +5,13 @@ import org.springframework.stereotype.Component
 
 @Component
 class GetUser : Query {
-    fun getUser(): User {
-        return User("asdasd", "1234567")
+
+    private val users: Map<String, User> = mapOf(
+            "1" to User("1", "John"),
+            "2" to User("2", "Sonia")
+    )
+
+    fun getUser(identifier: String): User {
+        return users.getValue(identifier)
     }
 }
