@@ -147,7 +147,7 @@ val mavenPublicationName: String = "maven"
 publishing {
     publications {
         create<MavenPublication>(mavenPublicationName) {
-            groupId = "com.davidgracia.software.authorizationmanager.server"
+            groupId = "com.davidgracia.software.authorizationmanager"
             artifactId = "server"
             version = project.version.toString()
 
