@@ -1,7 +1,6 @@
 // PLUGINS -- BEGIN
 plugins {
     kotlin("jvm") version "1.3.72"
-    `java-library`
     jacoco
     id("org.sonarqube") version "2.8"
     id("com.jfrog.bintray") version "1.8.5"
