@@ -1,8 +1,8 @@
 package com.davidgracia.software.authorizationmanager.server.primaryadapter.graphql.graphqljava
 
 import com.expediagroup.graphql.spring.operations.Mutation
-import org.springframework.stereotype.Component
 import java.util.UUID
+import org.springframework.stereotype.Component
 
 @Component
 class CreateUser : Mutation {
