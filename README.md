@@ -15,7 +15,6 @@
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
 
 
-
 Authorization management library.
 
 This library is about access-control. It is not about authentication.
