@@ -1,4 +1,4 @@
-rootProject.name = "authorization-manager"
+rootProject.name = "server"
 
 include("domain")
 include("interaction")

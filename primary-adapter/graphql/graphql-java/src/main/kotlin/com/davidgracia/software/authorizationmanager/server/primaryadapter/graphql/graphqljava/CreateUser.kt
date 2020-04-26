@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.primaryadapter.graphql.graphqljava
+package com.davidgracia.software.authorizationmanager.server.primaryadapter.graphql.graphqljava
 
 import com.expediagroup.graphql.annotations.GraphQLDescription
 import com.expediagroup.graphql.spring.operations.Mutation

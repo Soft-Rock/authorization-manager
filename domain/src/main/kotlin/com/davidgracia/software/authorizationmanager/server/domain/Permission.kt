@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.domain
+package com.davidgracia.software.authorizationmanager.server.domain
 
 data class Permission(val description: String) {
     fun setDescription(description: String): Permission {

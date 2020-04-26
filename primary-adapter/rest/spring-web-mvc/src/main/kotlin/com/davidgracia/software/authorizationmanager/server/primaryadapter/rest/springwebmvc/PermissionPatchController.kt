@@ -1,6 +1,6 @@
-package com.davidgracia.software.authorizationmanager.primaryadapter.rest.springwebmvc
+package com.davidgracia.software.authorizationmanager.server.primaryadapter.rest.springwebmvc
 
-import com.davidgracia.software.authorizationmanager.interaction.UpdatePermissionDescriptionCH
+import com.davidgracia.software.authorizationmanager.server.interaction.UpdatePermissionDescriptionCH
 import java.util.UUID
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PatchMapping

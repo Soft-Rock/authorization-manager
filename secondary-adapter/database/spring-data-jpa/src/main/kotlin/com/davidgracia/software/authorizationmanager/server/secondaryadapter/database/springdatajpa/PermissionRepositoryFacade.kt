@@ -1,7 +1,7 @@
-package com.davidgracia.software.authorizationmanager.secondaryadapter.database.springdatajpa
+package com.davidgracia.software.authorizationmanager.server.secondaryadapter.database.springdatajpa
 
-import com.davidgracia.software.authorizationmanager.domain.Permission
-import com.davidgracia.software.authorizationmanager.interaction.PermissionRepository
+import com.davidgracia.software.authorizationmanager.server.domain.Permission
+import com.davidgracia.software.authorizationmanager.server.interaction.PermissionRepository
 import java.util.UUID
 import org.springframework.stereotype.Component
 

@@ -1,6 +1,6 @@
-package com.davidgracia.software.authorizationmanager.interaction
+package com.davidgracia.software.authorizationmanager.server.interaction
 
-import com.davidgracia.software.authorizationmanager.domain.Permission
+import com.davidgracia.software.authorizationmanager.server.domain.Permission
 import io.mockk.every
 import io.mockk.mockk
 import java.util.UUID

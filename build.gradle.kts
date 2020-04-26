@@ -76,8 +76,8 @@ allprojects {
 sonarqube {
     properties {
         property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.organization", "beforeigners")
-        property("sonar.projectKey", "beforeigners_authorization-manager")
+        property("sonar.organization", "authorization-manager")
+        property("sonar.projectKey", "authorization-manager_server")
     }
 }
 // SonarQube -- END
@@ -147,15 +147,15 @@ val mavenPublicationName: String = "maven"
 publishing {
     publications {
         create<MavenPublication>(mavenPublicationName) {
-            groupId = "com.davidgracia.software"
-            artifactId = "authorization-manager"
+            groupId = "com.davidgracia.software.authorizationmanager.server"
+            artifactId = "server"
             version = project.version.toString()
 
             from(components["java"])
             pom {
-                name.set("Authorization manager")
+                name.set("Server")
                 description.set("A concise description of my library")
-                url.set("https://github.com/beforeigners/authorization-manager")
+                url.set("https://github.com/authorization-manager/server")
                 licenses {
                     license {
                         name.set("The MIT License")
@@ -170,9 +170,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection.set("scm:git:git://github.com/beforeigners/authorization-manager.git")
-                    developerConnection.set("scm:git:ssh://github.com/beforeigners/authorization-manager.git")
-                    url.set("https://github.com/beforeigners/authorization-manager")
+                    connection.set("scm:git:git://github.com/authorization-manager/server.git")
+                    developerConnection.set("scm:git:ssh://github.com/authorization-manager/server.git")
+                    url.set("https://github.com/authorization-manager/server")
                 }
             }
         }
@@ -186,9 +186,9 @@ bintray {
     publish = true
     pkg.apply {
         repo = "maven"
-        name = "authorization-manager"
-        userOrg = "beforeigners"
-        vcsUrl = "https://github.com/beforeigners/authorization-manager"
+        name = "server"
+        userOrg = "authorization-manager"
+        vcsUrl = "https://github.com/authorization-manager/server"
         version.apply {
             name = project.version.toString()
         }

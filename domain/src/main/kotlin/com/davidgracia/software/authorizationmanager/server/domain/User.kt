@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.domain
+package com.davidgracia.software.authorizationmanager.server.domain
 
 data class User(val roles: Set<Role>) {
     fun appointAs(role: Role): User {

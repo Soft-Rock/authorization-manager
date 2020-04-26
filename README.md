@@ -1,26 +1,24 @@
-# Authorization manager
+# Authorization manager server
 
-![](https://github.com/beforeigners/authorization-manager/workflows/Push%20to%20master%20CI/badge.svg)
+![](https://github.com/authorization-manager/server/workflows/Push%20to%20master%20CI/badge.svg)
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=alert_status)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=bugs)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=code_smells)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=coverage)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=ncloc)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=security_rating)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=sqale_index)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=beforeigners_authorization-manager&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=beforeigners_authorization-manager)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=alert_status)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=bugs)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=code_smells)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=coverage)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=ncloc)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=security_rating)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=sqale_index)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=authorization-manager_server&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=authorization-manager_server)
 
 
 
 Authorization management library.
 
 This library is about access-control. It is not about authentication.
-
-This library is written in Kotlin.
 
 ## Why?
 Authorization management has become a *commodity*.

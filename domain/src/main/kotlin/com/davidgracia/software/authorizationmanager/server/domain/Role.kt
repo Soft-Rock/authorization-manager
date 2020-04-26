@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.domain
+package com.davidgracia.software.authorizationmanager.server.domain
 
 data class Role(val permissions: Set<Permission>) {
     fun assignPermission(permission: Permission): Role {

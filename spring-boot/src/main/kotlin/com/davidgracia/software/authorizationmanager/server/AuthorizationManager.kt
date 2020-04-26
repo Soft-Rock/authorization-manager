@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager
+package com.davidgracia.software.authorizationmanager.server
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

@@ -1,6 +1,6 @@
-package com.davidgracia.software.authorizationmanager.interaction
+package com.davidgracia.software.authorizationmanager.server.interaction
 
-import com.davidgracia.software.authorizationmanager.domain.Permission
+import com.davidgracia.software.authorizationmanager.server.domain.Permission
 import java.util.UUID
 import javax.inject.Named
 import javax.transaction.Transactional

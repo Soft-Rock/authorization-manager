@@ -1,4 +1,4 @@
-package com.davidgracia.software.authorizationmanager.domain
+package com.davidgracia.software.authorizationmanager.server.domain
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
