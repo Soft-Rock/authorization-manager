@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component
 class GetUser : Query {
 
     private val users: Map<String, User> = mapOf(
-            "1" to User("1", "John"),
-            "2" to User("2", "Sonia")
+            "1" to User("1", "abc", "Walter White"),
+            "2" to User("2", "xyz", "Jesse Pinkman")
     )
 
     fun getUser(identifier: String): User {
