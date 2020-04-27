@@ -4,8 +4,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class AuthorizationManager
+class AuthorizationService
 
 fun main(args: Array<String>) {
-    runApplication<AuthorizationManager>(*args)
+    runApplication<AuthorizationService>(*args)
 }
