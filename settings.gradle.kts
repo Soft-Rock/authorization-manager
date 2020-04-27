@@ -1,4 +1,4 @@
-rootProject.name = "server"
+rootProject.name = "authorization-service"
 
 include("domain")
 include("interaction")

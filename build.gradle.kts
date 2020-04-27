@@ -76,8 +76,8 @@ allprojects {
 sonarqube {
     properties {
         property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.organization", "authorization-manager")
-        property("sonar.projectKey", "authorization-manager_server")
+        property("sonar.organization", "kerberos-platform")
+        property("sonar.projectKey", "kerberos-platform_authorization-service")
     }
 }
 // SonarQube -- END
@@ -155,7 +155,7 @@ publishing {
             pom {
                 name.set("Server")
                 description.set("A concise description of my library")
-                url.set("https://github.com/authorization-manager/server")
+                url.set("https://github.com/kerberos-platform/authorization-service")
                 licenses {
                     license {
                         name.set("The MIT License")
@@ -170,9 +170,9 @@ publishing {
                     }
                 }
                 scm {
-                    connection.set("scm:git:git://github.com/authorization-manager/server.git")
-                    developerConnection.set("scm:git:ssh://github.com/authorization-manager/server.git")
-                    url.set("https://github.com/authorization-manager/server")
+                    connection.set("scm:git:git://github.com/kerberos-platform/authorization-service.git")
+                    developerConnection.set("scm:git:ssh://github.com/kerberos-platform/authorization-service.git")
+                    url.set("https://github.com/kerberos-platform/authorization-service")
                 }
             }
         }
@@ -186,9 +186,9 @@ bintray {
     publish = true
     pkg.apply {
         repo = "maven"
-        name = "server"
-        userOrg = "authorization-manager"
-        vcsUrl = "https://github.com/authorization-manager/server"
+        name = "authorization-service"
+        userOrg = "kerberos-platform"
+        vcsUrl = "https://github.com/kerberos-platform/authorization-service"
         version.apply {
             name = project.version.toString()
         }
