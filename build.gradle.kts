@@ -148,12 +148,12 @@ publishing {
     publications {
         create<MavenPublication>(mavenPublicationName) {
             groupId = "com.davidgracia.software.authorizationmanager"
-            artifactId = "server"
+            artifactId = "authorization-service"
             version = project.version.toString()
 
             from(components["java"])
             pom {
-                name.set("Server")
+                name.set("Authorization service")
                 description.set("A concise description of my library")
                 url.set("https://github.com/kerberos-platform/authorization-service")
                 licenses {
