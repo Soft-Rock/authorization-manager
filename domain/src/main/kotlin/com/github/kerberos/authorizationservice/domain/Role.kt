@@ -1,23 +1,13 @@
 package com.github.kerberos.authorizationservice.domain
 
-data class Role(val permissions: Set<Permission>) {
-    fun assignPermission(permission: Permission): Role {
-        return copy(permissions = this.permissions.plusElement(permission))
-    }
+import java.util.UUID
 
-    fun assignPermissions(permissions: Set<Permission>): Role {
-        return copy(permissions = this.permissions.plus(permissions))
-    }
+data class Role(
+    val id: RoleId,
+    val name: RoleName,
+    val description: RoleDescription
+)
 
-    fun withdrawPermission(permission: Permission): Role {
-        return copy(permissions = this.permissions.minus(permission))
-    }
-
-    fun withdrawPermissions(permissions: Set<Permission>): Role {
-        return copy(permissions = this.permissions.minus(permissions))
-    }
-
-    fun hasAssigned(permission: Permission): Boolean {
-        return permissions.contains(permission)
-    }
-}
+data class RoleId(val value: UUID)
+data class RoleName(val value: String)
+data class RoleDescription(val value: String)
