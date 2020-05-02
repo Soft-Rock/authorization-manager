@@ -136,6 +136,7 @@ allprojects {
     dependencies {
         "implementation"(platform(kotlin("bom")))
         "implementation"(kotlin("stdlib-jdk8"))
+        "implementation"("javax.inject:javax.inject:1")
 
         "testImplementation"("org.junit.jupiter:junit-jupiter-api:5.6.2")
         "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine:5.6.2")
