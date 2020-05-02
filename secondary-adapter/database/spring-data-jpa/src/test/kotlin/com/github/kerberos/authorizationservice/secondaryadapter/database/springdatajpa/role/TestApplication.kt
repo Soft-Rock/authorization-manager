@@ -1,0 +1,6 @@
+package com.github.kerberos.authorizationservice.secondaryadapter.database.springdatajpa.role
+
+import org.springframework.boot.autoconfigure.SpringBootApplication
+
+@SpringBootApplication
+class TestApplication

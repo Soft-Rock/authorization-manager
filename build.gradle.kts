@@ -142,6 +142,7 @@ allprojects {
         "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine:5.6.2")
         "testImplementation"("io.mockk:mockk:1.10.0")
         "testImplementation"("org.assertj:assertj-core:3.15.0")
+        "testImplementation"("org.amshove.kluent:kluent:1.61")
     }
 }
 // Dependencies -- END

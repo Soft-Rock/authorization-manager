@@ -11,11 +11,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-autoconfigure:2.2.6.RELEASE")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-/*    testImplementation("org.springframework.boot:spring-boot-starter-test") {
-        exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
-    }*/
 
-//    implementation(project(":primary-adapter:rest:spring-web-mvc"))
     implementation(project(":primary-adapter:graphql:graphql-java"))
     implementation(project(":secondary-adapter:database:spring-data-jpa"))
 }

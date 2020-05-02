@@ -1,6 +1,9 @@
 package com.github.kerberos.authorizationservice.secondaryadapter.database.springdatajpa.role
 
 import com.github.kerberos.authorizationservice.domain.role.Role
+import com.github.kerberos.authorizationservice.domain.role.RoleDescription
+import com.github.kerberos.authorizationservice.domain.role.RoleId
+import com.github.kerberos.authorizationservice.domain.role.RoleName
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 import java.util.UUID
@@ -19,6 +22,11 @@ class JpaRole(
     private val name: String,
     private val description: String
 ) {
+    fun toRole(): Role = Role(
+        id = RoleId(UUID.fromString(this.id)),
+        name = RoleName(this.name),
+        description = RoleDescription(this.description)
+    )
 
 }
 
