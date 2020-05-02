@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 // PLUGINS -- BEGIN
 plugins {
     kotlin("jvm") version "1.3.72"
@@ -10,9 +12,30 @@ plugins {
 
 allprojects {
     apply(plugin = "kotlin")
-    java.sourceCompatibility = JavaVersion.VERSION_1_8
 }
 // PLUGINS -- END
+
+// JAVA VERSION -- BEGIN
+allprojects {
+    java.sourceCompatibility = JavaVersion.VERSION_11
+
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+}
+// JAVA VERSION -- END
+
+// NULLABILITY -- BEGIN
+allprojects {
+    tasks.withType<KotlinCompile> {
+        kotlinOptions {
+            freeCompilerArgs = listOf("-Xjsr305=strict")
+        }
+    }
+}
+// NULLABILITY -- END
 
 // SPOTLESS -- BEGIN
 allprojects {
@@ -130,12 +153,14 @@ allprojects {
 // Dependencies -- BEGIN
 allprojects {
     repositories {
+        mavenCentral()
         jcenter()
     }
 
     dependencies {
         "implementation"(platform(kotlin("bom")))
         "implementation"(kotlin("stdlib-jdk8"))
+        "implementation"(kotlin("reflect"))
         "implementation"("javax.inject:javax.inject:1")
 
         "testImplementation"("org.junit.jupiter:junit-jupiter-api:5.6.2")
