@@ -4,6 +4,7 @@ plugins {
     id("org.springframework.boot") version "2.2.6.RELEASE"
     id("io.spring.dependency-management") version "1.0.9.RELEASE"
     kotlin("plugin.spring") version "1.3.71"
+    kotlin("plugin.jpa") version "1.3.71"
 }
 
 tasks.bootJar {
