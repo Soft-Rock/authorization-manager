@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 // PLUGINS -- BEGIN
 plugins {
     kotlin("jvm") version "1.3.72"
+    `java-library`
     jacoco
     id("org.sonarqube") version "2.8"
     id("com.jfrog.bintray") version "1.8.5"
@@ -167,6 +168,7 @@ allprojects {
         "testRuntimeOnly"("org.junit.jupiter:junit-jupiter-engine:5.6.2")
         "testImplementation"("io.mockk:mockk:1.10.0")
         "testImplementation"("org.assertj:assertj-core:3.15.0")
+        "testImplementation"("com.github.tomakehurst:wiremock-jre8:2.26.3")
     }
 }
 // Dependencies -- END
@@ -183,7 +185,7 @@ publishing {
 
             from(components["java"])
             pom {
-                name.set("Authorization service")
+                name.set("Kerberos Authorization service")
                 description.set("A concise description of my library")
                 url.set("https://github.com/kerberos-platform/authorization-service")
                 licenses {
