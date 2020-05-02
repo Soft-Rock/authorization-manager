@@ -1,3 +1,3 @@
 graphql:
   packages:
-    - "com.davidgracia.software.authorizationmanager.server.primaryadapter.graphql.graphqljava"
+    - "com.github.kerberos.authorizationservice.primaryadapter.graphql.graphqljava"
