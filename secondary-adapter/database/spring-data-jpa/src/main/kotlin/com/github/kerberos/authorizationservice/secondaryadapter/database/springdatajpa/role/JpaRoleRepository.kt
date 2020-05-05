@@ -4,12 +4,12 @@ import com.github.kerberos.authorizationservice.domain.role.Role
 import com.github.kerberos.authorizationservice.domain.role.RoleDescription
 import com.github.kerberos.authorizationservice.domain.role.RoleId
 import com.github.kerberos.authorizationservice.domain.role.RoleName
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
 import java.util.UUID
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
 
 @Repository
 interface JpaRoleRepository : JpaRepository<JpaRole, UUID>
@@ -27,7 +27,6 @@ class JpaRole(
         name = RoleName(this.name),
         description = RoleDescription(this.description)
     )
-
 }
 
 internal fun Role.toJpaRole() =
@@ -36,5 +35,3 @@ internal fun Role.toJpaRole() =
         name = this.name.value,
         description = this.description.value
     )
-
-

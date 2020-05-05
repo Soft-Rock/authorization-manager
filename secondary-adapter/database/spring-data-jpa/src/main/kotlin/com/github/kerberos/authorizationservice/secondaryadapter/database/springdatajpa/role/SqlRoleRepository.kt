@@ -8,12 +8,11 @@ import javax.inject.Named
 @Named
 class SqlRoleRepository(
     private val jpaRoleRepository: JpaRoleRepository
-): RoleRepository {
+) : RoleRepository {
     override fun save(role: Role): Role =
         jpaRoleRepository
             .save(role.toJpaRole())
             .toRole()
-
 
     override fun findById(roleId: RoleId): Role =
         jpaRoleRepository
