@@ -8,10 +8,6 @@ plugins {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-autoconfigure:2.2.6.RELEASE")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
     implementation(project(":primary-adapter:graphql:graphql-java"))
     implementation(project(":secondary-adapter:database:spring-data-jpa"))
 
