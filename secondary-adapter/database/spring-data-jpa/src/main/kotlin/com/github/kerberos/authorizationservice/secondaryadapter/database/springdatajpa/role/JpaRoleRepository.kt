@@ -16,7 +16,7 @@ interface JpaRoleRepository : JpaRepository<JpaRole, UUID>
 
 @Entity
 @Table(name = "ROLES", schema = "PUBLIC")
-class JpaRole(
+data class JpaRole(
     @Id
     private val id: String,
     private val name: String,
