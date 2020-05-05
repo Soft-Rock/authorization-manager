@@ -1,4 +1,4 @@
-package com.github.kerberos.authorizationservice.secondaryadapter.database.springdatajpa.role
+package com.github.kerberos.authorizationservice.secondaryadapter.database.springdatajpa
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
