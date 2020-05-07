@@ -8,7 +8,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":primary-adapter:graphql:graphql-java"))
+    implementation(project(":primary-adapter:rest:spring-webmvc"))
     implementation(project(":secondary-adapter:database:spring-data-jpa"))
 
     implementation("org.springframework.boot:spring-boot-autoconfigure")
