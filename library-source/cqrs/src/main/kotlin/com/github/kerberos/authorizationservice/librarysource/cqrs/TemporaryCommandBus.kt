@@ -4,7 +4,7 @@ import javax.inject.Named
 
 @Named
 class TemporaryCommandBus : CommandBus {
-    override fun <C : Command> execute(command: C) {
+    override fun <C : Command> dispatch(command: C) {
         TODO("Not yet implemented")
     }
 }

@@ -12,6 +12,6 @@ class CreateRoleController(
 ) {
     @PostMapping("/roles")
     fun createRole(@RequestBody body: CreateRoleBody) {
-        commandBus.execute(CreateRoleCommand(body.id, body.description))
+        commandBus.dispatch(CreateRoleCommand(body.id, body.description))
     }
 }
