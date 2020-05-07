@@ -35,10 +35,10 @@ val containerTest: Test = task<Test>(containerTestName) {
 tasks.check { dependsOn(containerTest) }
 
 dependencies {
-    containerTestImplementation("io.rest-assured:rest-assured:4.1.2")
-    containerTestImplementation("io.rest-assured:json-path:4.1.2")
-    containerTestImplementation("io.rest-assured:xml-path:4.1.2")
-    containerTestImplementation("io.rest-assured:kotlin-extensions:4.1.2")
+    containerTestImplementation("io.rest-assured:rest-assured:4.2.0")
+    containerTestImplementation("io.rest-assured:json-path:4.2.0")
+    containerTestImplementation("io.rest-assured:xml-path:4.2.0")
+    containerTestImplementation("io.rest-assured:kotlin-extensions:4.2.0")
     containerTestImplementation("org.springframework.boot:spring-boot-starter-test") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         exclude(group = "io.rest-assured", module = "rest-assured")
