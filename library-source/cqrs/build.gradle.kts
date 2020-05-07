@@ -4,7 +4,5 @@ plugins {
 }
 
 dependencies {
-    api(project(":domain"))
     implementation("javax.transaction:javax.transaction-api:1.3")
-    implementation(project(":library-source:cqrs"))
 }
