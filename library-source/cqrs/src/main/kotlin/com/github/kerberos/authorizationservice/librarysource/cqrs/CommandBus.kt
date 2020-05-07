@@ -1,4 +1,4 @@
-package com.github.kerberos.authorizationservice.`library-source`.cqrs
+package com.github.kerberos.authorizationservice.librarysource.cqrs
 
 interface CommandBus {
     fun <C : Command> execute(command: C)
