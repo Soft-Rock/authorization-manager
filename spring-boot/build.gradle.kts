@@ -29,7 +29,7 @@ val containerTest: Test = task<Test>(containerTestName) {
     group = "verification"
     testClassesDirs = sourceSets[containerTestSourceSetName].output.classesDirs
     classpath = sourceSets[containerTestSourceSetName].runtimeClasspath
-    shouldRunAfter(tasks.test)
+    mustRunAfter(tasks.test)
 }
 
 tasks.check { dependsOn(containerTest) }
