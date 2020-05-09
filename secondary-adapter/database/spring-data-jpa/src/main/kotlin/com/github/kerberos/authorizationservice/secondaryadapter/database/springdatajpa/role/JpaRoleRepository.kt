@@ -9,9 +9,7 @@ import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
 import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.stereotype.Repository
 
-@Repository
 interface JpaRoleRepository : JpaRepository<JpaRole, String>
 
 @Entity

@@ -1,4 +1,4 @@
-package com.github.kerberos.authorizationservice.librarysource.cqrs
+package com.github.kerberos.authorizationservice.interaction.cqrs
 
 import com.github.kerberos.authorizationservice.interaction.role.CreateRole
 import com.github.kerberos.authorizationservice.interaction.role.create.CreateRoleCommand
