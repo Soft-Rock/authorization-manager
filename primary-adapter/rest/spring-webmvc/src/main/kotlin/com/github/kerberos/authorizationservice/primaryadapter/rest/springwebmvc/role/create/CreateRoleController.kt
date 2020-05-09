@@ -8,10 +8,16 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 class CreateRoleController(
-        private val commandBus: CommandBus
+    private val commandBus: CommandBus
 ) {
     @PostMapping("/roles")
     fun createRole(@RequestBody body: CreateRoleBody) {
-        commandBus.dispatch(CreateRoleCommand(body.id, body.description))
+        commandBus.dispatch(
+            CreateRoleCommand(
+                id = body.id,
+                name = body.name,
+                description = body.description
+            )
+        )
     }
 }

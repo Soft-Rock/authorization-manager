@@ -17,7 +17,9 @@ internal class SqlRoleRepositoryTest @Autowired constructor(jpaRoleRepository: J
 
     @Test
     fun `save role`() {
-        val role: Role = sqlRoleRepository.save(expectedRole)
+        sqlRoleRepository.save(expectedRole)
+
+        val role = sqlRoleRepository.findById(roleId)
 
         role `should be equal to` expectedRole
     }
