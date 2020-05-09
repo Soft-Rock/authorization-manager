@@ -14,7 +14,6 @@ class CreateRoleController(
     fun createRole(@RequestBody body: CreateRoleBody) {
         commandBus.dispatch(
             CreateRoleCommand(
-                id = body.id,
                 name = body.name,
                 description = body.description
             )

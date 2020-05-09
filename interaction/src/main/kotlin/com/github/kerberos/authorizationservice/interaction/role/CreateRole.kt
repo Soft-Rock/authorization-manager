@@ -16,7 +16,7 @@ class CreateRole(
     override fun handle(command: CreateRoleCommand) {
         command.let {
             Role(
-                RoleId(UUID.fromString(it.id)),
+                RoleId(UUID.randomUUID()),
                 RoleName(it.name),
                 RoleDescription(it.description)
             )
