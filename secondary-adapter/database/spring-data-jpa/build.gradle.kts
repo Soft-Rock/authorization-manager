@@ -9,17 +9,11 @@ plugins {
 
 dependencies {
     implementation(project(":interaction"))
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.2.6.RELEASE")
     runtimeOnly("com.h2database:h2:1.4.200")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
-    testImplementation("org.springframework.boot:spring-boot-starter-test") {
+    testImplementation("org.springframework.boot:spring-boot-starter-test:2.2.6.RELEASE") {
         exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
-    }
-}
-
-the<io.spring.gradle.dependencymanagement.dsl.DependencyManagementExtension>().apply {
-    imports {
-        mavenBom(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES)
     }
 }
