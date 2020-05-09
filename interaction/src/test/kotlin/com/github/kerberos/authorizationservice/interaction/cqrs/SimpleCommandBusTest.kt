@@ -5,7 +5,6 @@ import com.github.kerberos.authorizationservice.interaction.role.create.CreateRo
 import io.mockk.justRun
 import io.mockk.mockk
 import io.mockk.verify
-import java.util.UUID
 import org.junit.jupiter.api.Test
 
 internal class SimpleCommandBusTest {
@@ -14,7 +13,7 @@ internal class SimpleCommandBusTest {
 
     @Test
     fun `given a command, should dispatch execution to appropriate handler`() {
-        justRun { createRole.handle(command) }
+        justRun { createRole.handle(any()) }
 
         simpleCommandBus.dispatch(command)
 
@@ -25,9 +24,8 @@ internal class SimpleCommandBusTest {
 
     companion object {
         private val command = CreateRoleCommand(
-            id = UUID.randomUUID().toString(),
-            name = "Teacher",
-            description = "Person who delivers lectures in a school"
+                description = "Person who delivers lectures in a school",
+                name = "Teacher"
         )
     }
 }

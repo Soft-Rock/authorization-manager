@@ -12,7 +12,7 @@ import java.util.UUID
 import org.junit.jupiter.api.Test
 
 internal class CreateRoleTest {
-    private val roleRepository: RoleRepository = mockk()
+    private val roleRepository: RoleRepository = mockk(relaxed = true)
     private val createRole: CreateRole = CreateRole(roleRepository)
 
     @Test
@@ -37,9 +37,9 @@ internal class CreateRoleTest {
             description = RoleDescription(DESCRIPTION)
         )
         private val createRoleCommand = CreateRoleCommand(
-            id = ID.toString(),
-            name = NAME,
-            description = DESCRIPTION
+                id = ID.toString(),
+                description = DESCRIPTION,
+                name = NAME
         )
     }
 }
