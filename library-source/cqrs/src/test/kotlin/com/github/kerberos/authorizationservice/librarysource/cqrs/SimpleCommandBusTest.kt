@@ -27,7 +27,7 @@ internal class SimpleCommandBusTest {
     companion object {
         private val command = CreateRoleCommand(
             id = UUID.randomUUID().toString(),
-            description = "Student"
+            description = "Teacher"
         )
     }
 
