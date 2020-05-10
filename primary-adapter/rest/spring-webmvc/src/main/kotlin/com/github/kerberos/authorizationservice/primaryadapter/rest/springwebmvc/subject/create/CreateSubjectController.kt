@@ -1,4 +1,4 @@
-package com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc
+package com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc.subject.create
 
 import com.github.kerberos.authorizationservice.domain.subject.Subject
 import com.github.kerberos.authorizationservice.interaction.subject.SaveSubjectCommand
@@ -46,9 +46,10 @@ internal data class SubjectPostRequestDocument(val data: SubjectPostRequestResou
     }
 }
 
-internal data class SubjectPostRequestResource(val attributes: SubjectPostRequestResourceAttributes) {
-    val type: String = "subjects"
-}
+internal data class SubjectPostRequestResource(
+        val attributes: SubjectPostRequestResourceAttributes,
+        private val type: String = "subjects"
+)
 
 internal data class SubjectPostRequestResourceAttributes(
     val name: String
