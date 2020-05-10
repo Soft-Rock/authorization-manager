@@ -47,8 +47,8 @@ internal data class SubjectPostRequestDocument(val data: SubjectPostRequestResou
 }
 
 internal data class SubjectPostRequestResource(
-        val attributes: SubjectPostRequestResourceAttributes,
-        private val type: String = "subjects"
+    val attributes: SubjectPostRequestResourceAttributes,
+    private val type: String = "subjects"
 )
 
 internal data class SubjectPostRequestResourceAttributes(

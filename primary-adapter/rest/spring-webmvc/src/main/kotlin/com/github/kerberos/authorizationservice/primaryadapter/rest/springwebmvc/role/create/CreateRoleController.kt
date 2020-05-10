@@ -9,16 +9,17 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class CreateRoleController(
+internal class CreateRoleController(
     private val commandBus: CommandBus
 ) {
     @PostMapping("/roles")
     @ResponseStatus(CREATED)
-    fun createRole(@RequestBody body: CreateRoleBody) {
+    fun createRole(@RequestBody requestDocument: CreateRoleRequestDocument) {
+
         commandBus.dispatch(
             CreateRoleCommand(
-                name = body.name,
-                description = body.description
+                name = requestDocument.data.attributes.name,
+                description = requestDocument.data.attributes.description
             )
         )
     }
