@@ -11,7 +11,9 @@ tasks.bootJar {
 }
 
 dependencies {
+    implementation(project(":interaction"))
+
+    // implementation("org.hibernate:hibernate-validator:4.2.0.Final")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation(project(":interaction"))
 }

@@ -15,7 +15,6 @@ internal class CreateRoleController(
     @PostMapping("/roles")
     @ResponseStatus(CREATED)
     fun createRole(@RequestBody requestDocument: CreateRoleRequestDocument) {
-
         commandBus.dispatch(
             CreateRoleCommand(
                 name = requestDocument.data.attributes.name,
