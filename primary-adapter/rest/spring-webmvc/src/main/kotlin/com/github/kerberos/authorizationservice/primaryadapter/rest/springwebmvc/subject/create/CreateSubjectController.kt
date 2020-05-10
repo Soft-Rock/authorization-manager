@@ -15,33 +15,33 @@ internal class CreateSubjectController {
     @ResponseStatus(HttpStatus.CREATED)
     fun createSubject(@RequestBody subjectRequestPostBody: SubjectPostRequestDocument): SubjectPostResponseDocument {
         return SubjectPostResponseDocument(
-                data = SubjectPostResponseResource(
-                        id = "xyz",
-                        attributes = SubjectPostResponseResourceAttributes(
-                                externalIdentifier = "1234",
-                                name = "Jack"
-                        )
+            data = SubjectPostResponseResource(
+                id = "xyz",
+                attributes = SubjectPostResponseResourceAttributes(
+                    externalIdentifier = "1234",
+                    name = "Jack"
                 )
+            )
         )
     }
 }
 
 internal fun Subject.toDocument(): SubjectPostResponseDocument {
     return SubjectPostResponseDocument(
-            data = SubjectPostResponseResource(
-                    id = identifier.toString(),
-                    attributes = SubjectPostResponseResourceAttributes(
-                            externalIdentifier = externalIdentifier,
-                            name = name
-                    )
+        data = SubjectPostResponseResource(
+            id = identifier.toString(),
+            attributes = SubjectPostResponseResourceAttributes(
+                externalIdentifier = externalIdentifier,
+                name = name
             )
+        )
     )
 }
 
 internal data class SubjectPostRequestDocument(val data: SubjectPostRequestResource) {
     fun toSaveSubjectCommand(): SaveSubjectCommand {
         return SaveSubjectCommand(
-                name = data.attributes.name
+            name = data.attributes.name
         )
     }
 }
