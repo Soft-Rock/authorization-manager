@@ -2,4 +2,5 @@ package com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmv
 
 object ResourceTypes {
     const val ROLES = "roles"
+    const val SUBJECTS = "subjects"
 }

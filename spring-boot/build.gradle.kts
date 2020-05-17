@@ -45,6 +45,7 @@ dependencies {
     }
     containerTestImplementation("org.springframework:spring-web")
 
+    containerTestImplementation("com.google.code.gson:gson:2.8.6")
     containerTestImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
     containerTestRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
 }

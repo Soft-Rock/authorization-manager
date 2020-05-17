@@ -1,70 +1,95 @@
 package com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc.subject.create
 
-import com.github.kerberos.authorizationservice.domain.subject.Subject
-import com.github.kerberos.authorizationservice.interaction.subject.SaveSubjectCommand
+import com.github.kerberos.authorizationservice.interaction.subject.CreateSubjectCommand
+import com.github.kerberos.authorizationservice.interaction.subject.CreateSubjectCommandHandler
+import com.github.kerberos.authorizationservice.interaction.subject.FindSubjectQuery
+import com.github.kerberos.authorizationservice.interaction.subject.FindSubjectQueryHandler
+import com.github.kerberos.authorizationservice.interaction.subject.FindSubjectQueryResult
+import com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc.HttpConstants.CONTENT_TYPE_KEY
+import com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc.jsonapi.InvalidJsonApiTypeException
+import com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc.jsonapi.JsonApiConstants.CONTENT_TYPE
+import com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc.jsonapi.ResourceTypes.SUBJECTS
+import com.github.kerberos.authorizationservice.primaryadapter.rest.springwebmvc.subject.SubjectConstants
 import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-internal class CreateSubjectController {
+internal class CreateSubjectController(
+    private val createSubjectCommandHandler: CreateSubjectCommandHandler,
+    private val findSubjectQueryHandler: FindSubjectQueryHandler
+) {
 
-    @PostMapping("/subjects")
-    @ResponseStatus(HttpStatus.CREATED)
-    fun createSubject(@RequestBody subjectRequestPostBody: SubjectPostRequestDocument): SubjectPostResponseDocument {
-        return SubjectPostResponseDocument(
-            data = SubjectPostResponseResource(
-                id = "xyz",
-                attributes = SubjectPostResponseResourceAttributes(
-                    externalIdentifier = "1234",
-                    name = "Jack"
+    @PostMapping(SubjectConstants.PATH)
+    fun createSubject(@RequestBody subjectPostRequestDocument: SubjectPostRequestDocument): ResponseEntity<SubjectResponseDocument> {
+        return subjectPostRequestDocument
+                .toCreateSubjectCommand()
+                .let { createSubjectCommandHandler.handle(it) }
+                .let { findSubjectQueryHandler.handle(FindSubjectQuery(it)) }
+                .let {
+                    when (it) {
+                        is FindSubjectQueryResult -> ResponseEntity
+                                .status(HttpStatus.CREATED)
+                                .header(CONTENT_TYPE_KEY, CONTENT_TYPE)
+                                .body(it.toDocument())
+                        null -> ResponseEntity
+                                .notFound()
+                                .header(CONTENT_TYPE_KEY, CONTENT_TYPE)
+                                .build()
+                        else -> throw RuntimeException()
+                    }
+                }
+    }
+}
+
+private fun FindSubjectQueryResult.toDocument(): SubjectResponseDocument {
+    return with(this) {
+        SubjectResponseDocument(
+                data = SubjectResponseResource(
+                        id = subjectId.toString(),
+                        attributes = SubjectResponseResourceAttributes(
+                                externalId = externalId,
+                                name = name
+                        )
                 )
-            )
         )
     }
 }
 
-internal fun Subject.toDocument(): SubjectPostResponseDocument {
-    return SubjectPostResponseDocument(
-        data = SubjectPostResponseResource(
-            id = identifier.toString(),
-            attributes = SubjectPostResponseResourceAttributes(
-                externalIdentifier = externalIdentifier,
-                name = name
-            )
-        )
-    )
-}
-
 internal data class SubjectPostRequestDocument(val data: SubjectPostRequestResource) {
-    fun toSaveSubjectCommand(): SaveSubjectCommand {
-        return SaveSubjectCommand(
-            name = data.attributes.name
-        )
+    fun toCreateSubjectCommand(): CreateSubjectCommand {
+        return with(data.attributes) {
+            CreateSubjectCommand(
+                    externalId = externalId,
+                    name = name
+            )
+        }
     }
 }
 
 internal data class SubjectPostRequestResource(
     val attributes: SubjectPostRequestResourceAttributes,
-    private val type: String = "subjects"
-)
-
-internal data class SubjectPostRequestResourceAttributes(
-    val name: String
-)
-
-internal data class SubjectPostResponseDocument(val data: SubjectPostResponseResource)
-
-internal data class SubjectPostResponseResource(
-    val id: String,
-    val attributes: SubjectPostResponseResourceAttributes
+    val type: String
 ) {
-    val type: String = "subjects"
+    init {
+        if (type != SUBJECTS) throw InvalidJsonApiTypeException(type)
+    }
 }
 
-internal data class SubjectPostResponseResourceAttributes(
-    val externalIdentifier: String,
+internal data class SubjectPostRequestResourceAttributes(val externalId: String, val name: String)
+
+internal data class SubjectResponseDocument(val data: SubjectResponseResource)
+
+internal data class SubjectResponseResource(
+    val id: String,
+    val attributes: SubjectResponseResourceAttributes
+) {
+    val type: String = SUBJECTS
+}
+
+internal data class SubjectResponseResourceAttributes(
+    val externalId: String,
     val name: String
 )
