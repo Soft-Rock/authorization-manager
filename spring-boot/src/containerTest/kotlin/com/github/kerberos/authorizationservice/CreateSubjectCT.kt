@@ -29,13 +29,13 @@ internal class CreateSubjectCT {
     @Disabled
     fun `create subject`() {
         Given {
-            contentType("application/vnd.api+json")
+            contentType(JsonApiConstants.CONTENT_TYPE)
             body(requestBody)
         } When {
             post("/subjects")
         } Then {
             statusCode(HttpStatus.CREATED.value())
-            contentType("application/vnd.api+json")
+            contentType(JsonApiConstants.CONTENT_TYPE)
             body("", Matchers.equalTo(JsonPath(expectedResponseBody)))
         }
     }
